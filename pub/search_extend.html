@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="../js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#none" class="logo">
+                <img src="../images/idea.png" alt="logo">
+            </a>
+            <div class="search">
+                <div class="search-icon"><i class="xi-search"></i></div>
+                <span class="clear"><i class="xi-close-thin"></i></span>
+                <div class="input-box">
+                    <input type="text" id="searchInput" placeholder="Type Here...">
+                </div>
+            </div>
+        </header>
+        <section class="section01">
+            <h2>This is Section Title #01</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic nostrum voluptate minima a amet doloribus. Necessitatibus, sit quas nemo asperiores non distinctio expedita exercitationem neque blanditiis voluptate esse quae dolores? Nemo odio natus ipsa fuga ullam. Sit recusandae quibusdam saepe, molestiae, magni culpa eius accusamus dicta ab quidem rerum!
+            </p>
+        </section>
+        <section class="section02">
+            <h2>This is Section Title #02</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni hic nostrum voluptate minima a amet doloribus. Necessitatibus, sit quas nemo asperiores non distinctio expedita exercitationem neque blanditiis voluptate esse quae dolores? Nemo odio natus ipsa fuga ullam. Sit recusandae quibusdam saepe, molestiae, magni culpa eius accusamus dicta ab quidem rerum!
+            </p>
+        </section>
+    </div>
+
+    <script>
+        let search = document.querySelector('.search'),
+            searchIcon = document.querySelector('.search-icon'),
+            clear = document.querySelector('.clear'),
+            searchInput = document.getElementById('searchInput'),
+            section = document.getElementsByTagName('section');
+
+        // searchIcon.onclick = function(){
+        //     search.classList.toggle('active');
+        // }
+        searchIcon.addEventListener('click', function(){
+            search.classList.toggle('active');
+        })
+
+        clear.onclick = function(){
+            searchInput.value = '';
+        }
+
+        for (var i=0; section.length; i++) {
+            section[i].onclick = function(){
+                search.classList.remove('active');
+            }
+        }    
+        // $('section').click(function(){
+        //     $('.search').removeClass('active');
+        // })    
+    </script>
+</body>
+</html>

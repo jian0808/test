@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .card-container{
+        contain: style layout inline-size;
+        width: 50%;
+        padding: 20px;
+        border: 1px solid red;
+        transition: all 1s;
+    }
+    .card-container img{
+        width: 100%;
+    }
+    .title{
+        font-size: 30px;
+    }
+
+    @container (max-width: 350px){
+        .title{
+            font-size: 15px;
+            color: grey;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <img src="/images/coffee.jpg" alt="coffee">
+            <h4 class="title">title</h4>
+        </div>
+    </div>
+    <button>button</button>
+    
+</body>
+</html>

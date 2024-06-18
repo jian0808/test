@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="../js/jquery-3.6.3.min.js"></script>
+</head>
+<body>    
+    <div class="faq">
+        <div class="inner">
+            <h2>Title</h2>
+            <article class="accordian">
+                <div class="faq-title">Title 01</div>
+                <div class="faq-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus inventore rem consequuntur iusto culpa tempora perspiciatis reprehenderit quam cupiditate ipsam excepturi unde numquam recusandae exercitationem rerum, et fugit beatae.
+                </div>
+                <div class="faq-title">Title 02</div>
+                <div class="faq-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum fuga ex facilis in cupiditate, sit ducimus harum numquam nesciunt. Aperiam voluptatum atque quia sunt incidunt sint eos ab recusandae quas rem, eius facilis voluptatem tempore totam enim amet, vitae alias. Dolor nisi asperiores vero quaerat doloribus odit fuga possimus.
+                </div>
+                <div class="faq-title">Title 03</div>
+                <div class="faq-content">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate consectetur distinctio ipsam, soluta praesentium fuga quos rerum blanditiis nobis adipisci amet asperiores aut quasi esse expedita eveniet doloremque inventore saepe accusamus vitae ipsum sed, ducimus velit! Voluptatem, eum explicabo.
+                </div>
+                <div class="faq-title">Title 04</div>
+                <div class="faq-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum fuga ex facilis in cupiditate, sit ducimus harum numquam nesciunt. Aperiam voluptatum atque quia sunt incidunt sint eos ab recusandae quas rem, eius facilis voluptatem tempore totam enim amet, vitae alias. Dolor nisi asperiores vero quaerat doloribus odit fuga possimus.
+                </div>
+                <div class="faq-title">Title 05</div>
+                <div class="faq-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae similique eius maxime. Quas accusantium mollitia laudantium ea officiis culpa molestiae.
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+        $('.faq-title').eq(0).addClass('active');
+        $('.faq-content').eq(0).show();
+        $('.faq-title').click(function(){
+            $(this).addClass('active');
+            $(this).siblings('.faq-title').removeClass('active');
+            $(this).next().slideDown();
+            $(this).siblings('.faq-title').next().slideUp();
+        })
+    </script>
+</body>
+</html>

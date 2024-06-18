@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.6.3.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/722aed5009.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">Header</header>
+        <section class="section">section 01</section>
+        <section class="section">section 02</section>
+        <section class="section">section 03</section>
+        <footer>
+            <div class="footer-inner">
+                <div class="copyright">
+                    <div class="policy">
+                        <a href="#none">개인정보처리방침</a>
+                        <a href="#none">사이트맵</a>
+                    </div>
+                    <div class="info">
+                        <p>
+                            인천광역시 중구 개항로 6층 (주)코딩웍스<em>|</em>Tel.032-123-4567, 4568<em>|</em>E-mail. codingworks@abcd.com
+                        </p>
+                        <p>
+                            COPYRIGHT (C) CODINGWORKS COMPANY. ALL RIGHTS RESERVED.
+                        </p>
+                    </div>
+                </div>
+                <div class="family">
+                    <div class="dropdown">
+                        <div class="title">Family Site</div>
+                        <ul class="sub-navi">
+                            <li><a href="#none">familysite aaa</a></li>
+                            <li><a href="#none">familysite bbb</a></li>
+                            <li><a href="#none">familysite ccc</a></li>
+                            <li><a href="#none">familysite ddd</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            $('.title').click(function(){
+                $('.sub-navi').slideToggle();
+                $(this).toggleClass('active');
+            });
+            $('.sub-navi li').click(function(){
+                let link = $(this).text();
+                $(this).parent().slideUp();
+                // $('.title').text($(this).text());
+                $('.title').text(link);
+            });
+        </script>
+    </div>
+</body>
+</html>

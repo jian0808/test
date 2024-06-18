@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.6.3.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/722aed5009.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="frame">
+        <h2>Sound Control</h2>
+        <div class="buttons">
+            <button id="btn-play-pause" type="button" onclick="palyPause();">Play<i class="fa fa-play"></i></button>
+            <button type="button" onclick="stop();">Stop<i class="fa fa-stop"></i></button>
+        </div>
+        <audio src="../images/mountain-sky-bgm.mp3" id="audio" controls></audio>
+    </div>
+
+    <div class="audio-status">
+        <span style="height: 40%"></span>
+        <span style="height: 100%"></span>
+        <span style="height: 70%"></span>
+        <span style="height: 40%"></span>
+    </div>
+    
+    <script>
+        let audio = document.getElementById('audio'),
+            btnPalyPause = document.getElementById('btn-play-pause'),
+            audioStatus = document.querySelector('.audio-status');
+            checkStatus = 0;
+
+        function palyPause() {
+            if(checkStatus == 0) {
+                checkStatus = 1;
+                audio.play();
+                btnPalyPause.innerHTML = 'Pause<i class="fa fa-pause"></i>';
+                audioStatus.classList.add('active');
+            } else {
+                checkStatus = 0;
+                audio.pause();
+                btnPalyPause.innerHTML = 'Play<i class="fa fa-play"></i>';
+                audioStatus.classList.remove('active');
+            }
+            console.log(checkStatus);
+        }
+        function stop(){
+            palyPause();
+            audio.pause();
+            audio.currentTime = 0;
+            btnPalyPause.innerHTML = 'Pause<i class="fa fa-pause"></i>';
+            audioStatus.classList.remove('active');
+        }
+
+    </script>
+</body>
+</html>
